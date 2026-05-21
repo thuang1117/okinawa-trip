@@ -283,6 +283,16 @@ summary strong {
   text-decoration: none;
 }
 
+.reminder-link {
+  background: #fff0dc;
+  color: #8a4a08;
+}
+
+.reminder-link:hover,
+.reminder-link:focus-visible {
+  background: #ffe4b8;
+}
+
 @media (max-width: 760px) {
   .topbar,
   .panel-heading {

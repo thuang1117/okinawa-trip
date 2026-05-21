@@ -19,7 +19,7 @@ const itinerary = {
       {
         time: "15:00",
         name: "OTS 臨空豐崎營業所領車",
-        note: "Word 檔寫 OST，依租車品牌常見名稱整理為 OTS。領車後前往飯店，車程約 90 分鐘。",
+        note: "Word 檔寫 OST，依租車品牌常見名稱整理為 OTS。領車後前往飯店，車程約 90 分鐘。目前國際線航廈前的接駁區正在施工，抵達沖繩後請由國際線航廈步行至國內線航廈前的國內線接駁區「10-A」搭乘巴士。",
         mapQuery: "OTS Rent a Car Rinku Toyosaki Branch Okinawa",
         parking: "租車營業所內辦理領車；停車以店家現場安排為準。"
       },
@@ -61,11 +61,32 @@ const itinerary = {
         parking: "使用飯店住客停車場。"
       },
       {
+        time: "11:00",
+        name: "出發前往 iNUBI",
+        note: "午餐 iNUBI 訂位 12:30，飯店出發車程約 90 分鐘。建議 11:00 準時出發。",
+        mapQuery: "iNUBI Okinawa",
+        parking: "抵達後建議先確認餐廳或周邊收費停車場。",
+        reminder: {
+          title: "出發前往 iNUBI",
+          start: "20260528T110000",
+          end: "20260528T111500",
+          details: "午餐 iNUBI 訂位 12:30，Hotel Nikko Alivila 出發車程約 90 分鐘。建議 11:00 準時出發。",
+          location: "iNUBI Okinawa"
+        }
+      },
+      {
         time: "12:30",
         name: "午餐：iNUBI",
         note: "訂位 12:30，營業 11:00-15:00，週三公休。飯店出發車程約 90 分鐘。",
         mapQuery: "iNUBI Okinawa",
-        parking: "建議查餐廳附近停車，若滿位可改停周邊收費停車場。"
+        parking: "建議查餐廳附近停車，若滿位可改停周邊收費停車場。",
+        reminder: {
+          title: "午餐：iNUBI",
+          start: "20260528T123000",
+          end: "20260528T140000",
+          details: "iNUBI 訂位 12:30，營業 11:00-15:00，週三公休。",
+          location: "iNUBI Okinawa"
+        }
       },
       {
         time: "15:00",
@@ -119,9 +140,9 @@ const itinerary = {
         parking: "真榮田岬有停車場；潛水旺季可能排隊，請提早抵達。"
       },
       {
-        time: "15:00",
+        time: "13:00",
         name: "美國村拍照",
-        note: "青之洞到美國村車程約 30 分鐘，適合拍照與短暫散步。",
+        note: "青之洞到美國村車程約 30 分鐘。13:00 抵達，美國村拍照時間為 13:30。",
         mapQuery: "American Village Okinawa",
         parking: "美國村區域有免費與商場停車場，尖峰時段需多繞一下。"
       },
@@ -282,6 +303,18 @@ function googleParkingUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${query} parking`)}`;
 }
 
+function googleCalendarUrl(reminder) {
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: reminder.title,
+    dates: `${reminder.start}/${reminder.end}`,
+    details: reminder.details,
+    location: reminder.location,
+    ctz: "Asia/Taipei"
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
 function describeWeather(code) {
   return weatherLabels[code] || "天氣狀態待確認";
 }
@@ -346,6 +379,14 @@ function renderDay(dayKey) {
     mapLink.textContent = "Google Map";
     parkingLink.textContent = "查附近停車";
     links.append(mapLink, "｜", parkingLink);
+
+    if (stop.reminder) {
+      const reminderLink = document.createElement("a");
+      reminderLink.href = googleCalendarUrl(stop.reminder);
+      reminderLink.className = "action-link reminder-link";
+      reminderLink.textContent = "加入出發提醒";
+      links.append("｜", reminderLink);
+    }
 
     const parking = document.createElement("p");
     parking.textContent = `停車資訊：${stop.parking}`;
