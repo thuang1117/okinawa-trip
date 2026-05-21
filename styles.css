@@ -298,6 +298,16 @@ summary strong {
   background: #ffe4b8;
 }
 
+.external-link {
+  background: #e8edff;
+  color: #233a8b;
+}
+
+.external-link:hover,
+.external-link:focus-visible {
+  background: #dbe3ff;
+}
+
 @media (max-width: 760px) {
   .topbar,
   .panel-heading {

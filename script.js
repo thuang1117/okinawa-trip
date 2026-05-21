@@ -96,97 +96,71 @@ const itinerary = {
   day2: {
     date: "2026-05-28",
     label: "Day 2｜5/28（四）",
-    title: "飯店玩水、美麗海水族館與北部晚餐",
-    routeUrl: "https://www.google.com/maps/dir/?api=1&origin=Hotel%20Nikko%20Alivila&destination=Hotel%20Nikko%20Alivila&travelmode=driving&waypoints=iNUBI%20Okinawa%7COkinawa%20Churaumi%20Aquarium%7CDaizaemon%20Okinawa",
+    title: "Hotel Nikko Alivila 飯店玩水與設施日",
+    routeUrl: "https://www.google.com/maps/search/?api=1&query=Hotel%20Nikko%20Alivila%20Okinawa",
     stops: [
       {
         time: "08:00",
-        name: "飯店早餐與玩水",
-        note: "上午留在 Hotel Nikko Alivila 用早餐、玩水。",
+        name: "飯店早餐",
+        note: "Day 2 全日改為飯店玩水與放鬆，不安排外出車程。",
         mapQuery: "Hotel Nikko Alivila Okinawa",
         parking: "使用飯店住客停車場。"
       },
       {
-        time: "11:00",
-        name: "出發前往 iNUBI",
-        note: "午餐 iNUBI 訂位 12:30，飯店出發車程約 90 分鐘。建議 11:00 準時出發。",
-        mapQuery: "iNUBI Okinawa",
-        parking: "抵達後建議先確認餐廳或周邊收費停車場。",
-        reminder: {
-          title: "出發前往 iNUBI",
-          start: "20260528T110000",
-          end: "20260528T111500",
-          details: "午餐 iNUBI 訂位 12:30，Hotel Nikko Alivila 出發車程約 90 分鐘。建議 11:00 準時出發。",
-          location: "iNUBI Okinawa"
-        }
-      },
-      {
-        time: "12:30",
-        name: "午餐：iNUBI",
-        note: "訂位 12:30，營業 11:00-15:00，週三公休。飯店出發車程約 90 分鐘。",
-        mapQuery: "iNUBI Okinawa",
-        parking: "建議查餐廳附近停車，若滿位可改停周邊收費停車場。",
-        reminder: {
-          title: "午餐：iNUBI",
-          start: "20260528T123000",
-          end: "20260528T140000",
-          details: "iNUBI 訂位 12:30，營業 11:00-15:00，週三公休。",
-          location: "iNUBI Okinawa"
-        }
-      },
-      departureStop(
-        "14:45",
-        "出發前往 美麗海水族館",
-        "iNUBI 到美麗海水族館車程約 6 分鐘；為了 15:00 海豚表演，建議 14:45 出發。",
-        "Okinawa Churaumi Aquarium",
-        "海洋博公園有多處停車場，建議依水族館入口選最近區域。",
-        "20260528T144500",
-        "20260528T150000",
-        "Okinawa Churaumi Aquarium"
-      ),
-      {
-        time: "15:00",
-        name: "美麗海水族館",
-        note: "15:00 海豚表演，15:00-15:30 付費餵食海豚，17:00 鯨鯊餵食秀。午餐後車程約 6 分鐘。",
-        mapQuery: "Okinawa Churaumi Aquarium",
-        parking: "海洋博公園有多處停車場，建議依水族館入口選最近區域。"
-      },
-      departureStop(
-        "18:20",
-        "出發前往 Daizaemon",
-        "美麗海水族館到 Daizaemon 車程約 30-40 分鐘；晚餐訂位 19:00，建議 18:20 出發。",
-        "Daizaemon Okinawa",
-        "出發前查周邊停車；若同行長輩小孩多，建議先讓乘客下車。",
-        "20260528T182000",
-        "20260528T190000",
-        "Daizaemon Okinawa"
-      ),
-      {
-        time: "19:00",
-        name: "晚餐：Daizaemon",
-        note: "訂位 19:00，營業 17:00-22:00，週二公休。水族館到餐廳約 30-40 分鐘。",
-        mapQuery: "Daizaemon Okinawa",
-        parking: "出發前查周邊停車；若同行長輩小孩多，建議先讓乘客下車。"
-      },
-      departureStop(
-        "20:30",
-        "出發返回 Hotel Nikko Alivila",
-        "晚餐後返回 Hotel Nikko Alivila，車程約 60-70 分鐘。",
-        "Hotel Nikko Alivila Okinawa",
-        "使用飯店住客停車場。",
-        "20260528T203000",
-        "20260528T214000",
-        "Hotel Nikko Alivila Okinawa"
-      ),
-      {
-        time: "20:30",
-        name: "返回 Hotel Nikko Alivila",
-        note: "回飯店車程約 60-70 分鐘。雨備：名護鳳梨園。",
+        time: "09:30",
+        name: "飯店泳池與海灘活動",
+        note: "可使用飯店泳池、海灘與度假設施。請依現場營業時間、天候與安全規範調整。",
         mapQuery: "Hotel Nikko Alivila Okinawa",
+        parking: "使用飯店住客停車場。",
+        externalLinks: [
+          {
+            label: "飯店活動設施官網",
+            url: "https://www.alivila.co.jp/activity/?hl=zh-TW"
+          }
+        ]
+      },
+      {
+        time: "11:30",
+        name: "飯店設施大綱",
+        note: "可依飯店官網與現場資訊安排：室外泳池、海灘散步、水上活動、親子活動、館內商店、休憩空間與餐飲設施。實際開放項目、收費與預約方式請以飯店官方頁面為準。",
+        mapQuery: "Hotel Nikko Alivila Okinawa",
+        parking: "使用飯店住客停車場。",
+        externalLinks: [
+          {
+            label: "查看 Hotel Nikko Alivila 活動",
+            url: "https://www.alivila.co.jp/activity/?hl=zh-TW"
+          }
+        ]
+      },
+      {
+        time: "午餐",
+        name: "飯店內午餐 / 自由用餐",
+        note: "改為飯店內或附近自由用餐。",
+        mapQuery: "Hotel Nikko Alivila restaurants",
+        parking: "留在飯店使用住客停車場。"
+      },
+      {
+        time: "下午",
+        name: "飯店玩水與休息",
+        note: "下午保留彈性，可繼續玩水、午休、海灘散步或參考飯店活動頁安排體驗。",
+        mapQuery: "Hotel Nikko Alivila Okinawa",
+        parking: "使用飯店住客停車場。",
+        externalLinks: [
+          {
+            label: "活動與設施參考",
+            url: "https://www.alivila.co.jp/activity/?hl=zh-TW"
+          }
+        ]
+      },
+      {
+        time: "晚餐",
+        name: "飯店內晚餐 / 自由用餐",
+        note: "改為飯店內或附近自由用餐，依當天體力與小朋友狀態調整。",
+        mapQuery: "Hotel Nikko Alivila restaurants",
         parking: "使用飯店住客停車場。"
       }
     ],
-    weather: "晴，約 23-27°C，戶外活動需防曬補水。"
+    weather: "晴，約 23-27°C，飯店泳池與海灘活動需防曬補水。"
   },
   day3: {
     date: "2026-05-29",
@@ -620,6 +594,16 @@ function renderDay(dayKey) {
       reminderLink.className = "action-link reminder-link";
       reminderLink.textContent = "加入出發提醒";
       links.append("｜", reminderLink);
+    }
+
+    if (stop.externalLinks) {
+      stop.externalLinks.forEach((externalLink) => {
+        const link = document.createElement("a");
+        link.href = externalLink.url;
+        link.className = "action-link external-link";
+        link.textContent = externalLink.label;
+        links.append("｜", link);
+      });
     }
 
     const parking = document.createElement("p");
