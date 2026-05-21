@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>沖繩旅遊行程</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Trip Planner</p>
+        <h1>沖繩親子自駕行程</h1>
+      </div>
+      <div class="trip-meta">
+        <div class="trip-summary">5/27 - 5/31｜5 天 4 夜</div>
+        <a class="flight-pill" href="https://www.starlux-airlines.com/en-Global/flight-status">
+          <span class="flight-icon" aria-hidden="true">✈</span>
+          <span>去程 JX870 12:00-14:20</span>
+          <small>查航班狀態</small>
+        </a>
+        <a class="flight-pill" href="https://www.starlux-airlines.com/en-Global/flight-status">
+          <span class="flight-icon" aria-hidden="true">✈</span>
+          <span>回程 JX871 15:35-16:20</span>
+          <small>查航班狀態</small>
+        </a>
+      </div>
+    </header>
+
+    <nav class="day-list" id="dayList" aria-label="每日行程"></nav>
+
+    <main class="page-stack">
+      <section class="itinerary-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="dayLabel">Day 1</p>
+            <h2 id="dayTitle">行程載入中</h2>
+          </div>
+          <a class="route-link" id="routeLink" href="#">開啟整日路線</a>
+        </div>
+        <div class="weather-card" id="weatherCard">
+          <strong>天氣預報</strong>
+          <span id="weatherSummary">正在載入沖繩當日預測...</span>
+        </div>
+        <div class="stop-grid" id="stopGrid"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
