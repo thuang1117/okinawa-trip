@@ -264,6 +264,11 @@ summary strong {
   line-height: 1.75;
 }
 
+.stop-alert {
+  color: #c01818 !important;
+  font-weight: 900;
+}
+
 .action-link {
   display: inline-flex;
   align-items: center;
